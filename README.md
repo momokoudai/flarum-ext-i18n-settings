@@ -1,125 +1,9 @@
+[中文文档](README_zh.md)
+
 # Flarum Extension i18n Settings
 
 > Add multilingual display support to selected Flarum core settings and extension fields that normally only support a single language input.
-
----
-
-## Features
-
-- ✅ Frontend-only replacement, admin values remain editable in raw form
-- ✅ Supports Flarum core basics settings
-- ✅ Supports selected third-party extensions
-- ✅ Supports JSON format and simple `中文|English` format
-- ✅ Explicit target control via `Enabled Plugins`
-- ✅ Empty target list disables replacement by default
-
-## Supported targets
-
-| Target        | Scope                        | Fields                                                                                                   |
-| ------------- | ---------------------------- | -------------------------------------------------------------------------------------------------------- |
-| `flarum-core` | Flarum core `/admin#/basics` | `forum_title`, `forum_description`, `welcome_title`, `welcome_message`, `custom_header`, `custom_footer` |
-| `fof-links`   | `fof/links`                  | `title`, `url`                                                                                           |
-| `flarum-tags` | `flarum/tags`                | `name`, `description`                                                                                    |
-
-> Only targets listed in `Enabled Plugins` will be replaced.
-
-## Installation
-
-```bash
-composer require momokoudai/flarum-ext-i18n-settings
-php flarum cache:clear
-```
-
-## Configuration
-
-Open the extension settings in the Flarum admin panel.
-
-### 1. Filter Pattern
-
-Default:
-
-```text
-$$$
-```
-
-This marker identifies content that should be processed for multilingual replacement.
-
-### 2. Enabled Plugins
-
-Examples:
-
-```text
-flarum-core
-```
-
-```text
-flarum-core, fof-links, flarum-tags
-```
-
-If left empty, **replacement is disabled by default**.
-
-## Usage
-
-### Recommended JSON format
-
-```text
-$$${"zh-Hans":"简体中文","en":"English","ja":"日本語"}$$$
-```
-
-### Simple format
-
-```text
-$$$中文|English$$$
-```
-
-## Examples
-
-### Forum title
-
-```text
-$$${"zh-Hans":"我的社区","en":"My Community"}$$$
-```
-
-### Welcome banner
-
-```text
-$$${"zh-Hans":"欢迎来到社区","en":"Welcome to the community"}$$$
-```
-
-### Custom header / footer with HTML
-
-```text
-$$${"zh-Hans":"<div class='notice'>中文公告</div>","en":"<div class='notice'>English Notice</div>"}$$$
-```
-
-> For HTML content, prefer single quotes inside attributes to keep JSON easier to write.
-
-## Behavior and safety
-
-- Replacement runs only on the **forum frontend**
-- Admin forms keep the original marker content for editing
-- User-generated discussions, posts, and replies are **not** replaced
-- Unsupported extensions are not modified unless explicit compatibility is added
-
-## Compatibility
-
-- Flarum `^1.8`
-
-## Notes
-
-This extension is designed as a **targeted compatibility layer**, not a site-wide text replacement engine.
-
-If you need support for another extension with admin-managed text fields, it can be added through a dedicated adapter.
-
-## License
-
-MIT
-
-# Flarum Extension i18n Settings / Flarum 后台设置多语言支持
-
-> Add multilingual display support to selected Flarum core settings and extension fields that normally only support a single language input.
-
-> 为部分 **后台可填写、但原生不支持多语言输入** 的 Flarum 核心设置和扩展字段提供前台多语言显示支持。
+> For example, the `title` and `url` fields of the `fof/links` extension. The backend supports setting titles and links, but can only set one language, which does not support multi-language input. This extension provides front-end multi-language display support. By entering specific tags, you can support multi-language input.
 
 ---
 
@@ -300,9 +184,10 @@ $$${"zh-Hans":"简体中文","en":"English","ja":"日本語"}$$$
 
 #### 旧版兼容格式
 
-```text
+``text
 $$$中文|English$$$
-```
+
+````
 
 ### 示例
 
@@ -310,7 +195,7 @@ $$$中文|English$$$
 
 ```text
 $$${"zh-Hans":"我的社区","en":"My Community"}$$$
-```
+````
 
 #### Welcome Banner
 
