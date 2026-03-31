@@ -1,0 +1,8 @@
+momokoudai-i18n-settings:
+  admin:
+    settings:
+      filter_pattern_label: "Filter Pattern"
+      filter_pattern_help: "Markers for identifying content that needs internationalization, e.g. $$$"
+      enabled_plugins_label: "Enabled Plugins"
+      enabled_plugins_help: "Supported targets: flarum-core (forum title/description/welcome banner/custom header/custom footer), fof-links, flarum-tags. Separate with commas. Leave empty to disable replacement by default."
+      enabled_plugins_placeholder: "flarum-core, fof-links, flarum-tags"

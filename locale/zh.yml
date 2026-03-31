@@ -1,0 +1,8 @@
+momokoudai-i18n-settings:
+  admin:
+    settings:
+      filter_pattern_label: "过滤标记"
+      filter_pattern_help: "用于识别需要国际化的内容的标记，例如 $$$"
+      enabled_plugins_label: "启用的插件"
+      enabled_plugins_help: "支持的目标：flarum-core（论坛标题/描述/Welcome Banner/custom header/custom footer）、fof-links、flarum-tags。用逗号分隔；留空时默认不启用替换。"
+      enabled_plugins_placeholder: "flarum-core, fof-links, flarum-tags"

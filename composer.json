@@ -1,0 +1,34 @@
+{
+  "name": "momokoudai/flarum-ext-i18n-settings",
+  "description": "Flarum 后台设置内容国际化插件|Flarum Extension i18n Settings",
+  "type": "flarum-extension",
+  "version": "0.2.0",
+  "require": {
+    "flarum/core": "^1.8"
+  },
+  "autoload": {
+    "psr-4": {
+      "Momokoudai\\FlarumExtI18nSettings\\": "src/"
+    }
+  },
+  "support": {
+    "source": "https://github.com/momokoudai/flarum-ext-i18n-settings",
+    "issues": "https://github.com/momokoudai/flarum-ext-i18n-settings/issues"
+  },
+  "authors": [
+    {
+      "name": "momokoudai",
+      "homepage": "https://github.com/momokoudai/flarum-ext-i18n-settings",
+      "role": "Developer"
+    }
+  ],
+  "extra": {
+    "flarum-extension": {
+      "title": "Extension i18n settings",
+      "type": "extension",
+      "icon": {
+        "name": "fas fa-language"
+      }
+    }
+  }
+}
