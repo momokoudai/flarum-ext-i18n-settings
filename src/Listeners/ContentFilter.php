@@ -31,8 +31,6 @@ class ContentFilter
         $this->translator = $translator;
     }
 
-
-
     public function filterForumAttributes(array $attributes)
     {
         if (!$this->shouldFilterCurrentRequest() || !$this->isPluginEnabled('flarum-core') || !$this->looksLikeForumBasicsAttributes($attributes)) {
@@ -159,11 +157,9 @@ class ContentFilter
                         // 兼容旧格式：中文|English
                         $parts = explode('|', $jsonContent);
                         if (strpos($locale, 'zh') === 0) {
-                            $result = isset($parts[0]) ? $parts[0] : $matches[0];
-                            return $result;
+                            return isset($parts[0]) ? $parts[0] : $matches[0];
                         } else {
-                            $result = isset($parts[1]) ? $parts[1] : (isset($parts[0]) ? $parts[0] : $matches[0]);
-                            return $result;
+                            return isset($parts[1]) ? $parts[1] : (isset($parts[0]) ? $parts[0] : $matches[0]);
                         }
                     }
                 }, $content);
@@ -240,4 +236,5 @@ class ContentFilter
         // 其他语言保持不变
         return $locale;
     }
+    
 }
